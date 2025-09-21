@@ -1,0 +1,697 @@
+/* 全体の装飾 */
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  touch-action: manipulation;
+}
+
+body {
+  font-family: UD Digi Kyokasho N-B, "ヒラギノ角ゴ ProN W6", "ヒラギノ角ゴ ProN";
+  user-select: none;
+  width: 100%;
+  height: 100%;
+  min-width: 1024px;
+  min-height: 768px;
+  background-color: white;
+}
+
+#tegaki_pallet .btn {
+  width: 40px;
+  height: 40px;
+  margin: 2.5px;
+  cursor: pointer;
+}
+
+.blk_img {
+  width: 76px;
+  height: 76px;
+  margin: 0;
+}
+
+.blk_td {
+  width: 80px;
+  height: 80px;
+  margin: 0;
+  border-collapse: collapse;
+  background-color: "#f6f0cc";
+}
+
+#count {
+  width: 60px;
+  height: 50px;
+  font-size: 26px;
+  text-align: center;
+}
+
+/* ---------header まわり-------------------------------------- */
+header {
+  position: fixed;
+  display: flex;
+  justify-content: left;
+  top: 0;
+  left: 0;
+  width: calc(100% - 200px);
+  height: 50px;
+  background-color: #f6f0cc;
+  z-index: 1;
+}
+
+.form-select {
+  width: 70px;
+  height: 40px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+label {
+  display: flex;
+
+  height: 40px;
+  cursor: pointer;
+  background-color: aliceblue;
+  margin: 5px 0 5px 10px;
+}
+
+.checkbox {
+  width: 30px;
+  height: 30px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+#main_text_box {
+  text-align: center;
+  width: calc(100% - 600px);
+  height: 40px;
+  font-size: 20px;
+  margin: 5px;
+  padding: 5px;
+  background-color: #005aff;
+  color: white;
+}
+
+#icon_area {
+  min-width: 200px;
+  background-color: #f6f0cc;
+  z-index: 1;
+  text-align: center;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  margin: 5px 0 5px 0;
+  background-color: white;
+  cursor: pointer;
+}
+
+#ud {
+  min-width: 40px;
+  height: 40px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+/* ----main ------------------------------------------- */
+main {
+  position: fixed;
+  height: 100%;
+  z-index: 1;
+}
+
+/* atricle まわり ---------------------------------------*/
+article {
+  position: fixed;
+  margin-top: 50px;
+  width: calc(100% - 200px);
+}
+
+#tegaki_canvas {
+  position: fixed;
+  width: calc(100% - 200px);
+  height: calc(100% - 70px);
+  background: rgba(255, 255, 205, 0);
+  pointer-events: none;
+  border: none;
+  z-index: 10000;
+}
+
+#sub {
+  position: fixed;
+  display: flex;
+  margin-top: 50px;
+  height: 50px;
+  z-index: 200;
+}
+
+#sub .form-select {
+  width: 150px;
+  font-size: 12px;
+}
+
+#buttons {
+  display: flex;
+}
+
+#buttons .btn,#content .btn {
+  width: 80px;
+  height: 40px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+#shiki {
+  display: flex;
+  margin-left: 10px;
+  line-height: 50px;
+}
+
+#sub input {
+  width: 80px;
+  margin-left: 5px;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 5px;
+  text-align: center;
+  pointer-events: all;
+}
+
+#sub .kigo {
+  width: 30px;
+  height: 30px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 20px;
+}
+
+#count {
+  width: 50px;
+  border: solid 1px;
+}
+
+#content {
+  margin-top: 40px;
+}
+
+#note_masu {
+  z-index: 1;
+  margin-top: 50px;
+  margin-left: 10px;
+}
+
+.tegaki {
+  position: fixed;
+  width: 300px;
+  height: 240px;
+  left: 50px;
+  top: 140px;
+  z-index: 100;
+}
+
+.text_box {
+  position: fixed;
+  height: 30px;
+  padding-top: 2px;
+  padding-bottom: auto;
+  cursor: pointer;
+}
+
+.figure,
+.square,
+.triangle,
+.circle,
+.dia {
+  position: fixed;
+  left: 110px;
+  top: 140px;
+  width: 120px;
+  height: 120px;
+  border: 2px solid #b2ce54;
+  opacity: 0.7;
+  z-index: 100;
+}
+
+.line {
+  position: fixed;
+  left: 100px;
+  top: 110px;
+  width: 100px;
+  min-height: 5px;
+  max-height: 5px;
+  position: fixed;
+  cursor: pointer;
+}
+
+#text_input_box {
+  width: 150px;
+  height: 40px;
+  margin: 3px 5px;
+}
+
+#submit {
+  width: 40px;
+  height: 40px;
+  margin: 3px 0 0 -5px;
+}
+
+/* グリッド作成---------------- */
+
+td {
+  border: #333 solid 1px;
+}
+
+#clock {
+  background-color: none;
+}
+#score {
+  font-family: "BIZ UDGothic";
+}
+.input-box {
+  box-sizing: border-box;
+  margin: 0 auto 40px;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  height: 60px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5) inset;
+  -webkit-appearance: none;
+  height: 50px;
+  width: 70px;
+  font-size: 30px;
+  text-align: center;
+}
+.input-box:before {
+  top: 8px;
+  right: 20px;
+  color: #eceff1;
+  font-size: 20px;
+  content: "▲";
+  pointer-events: none;
+}
+.input-box:after {
+  bottom: 8px;
+  right: 20px;
+  color: #eceff1;
+  font-size: 20px;
+  content: "▼";
+  pointer-events: none;
+}
+
+#tokei_board {
+  z-index: 200;
+  margin-left: 50px;
+}
+#tokei_range {
+  width: 600px;
+}
+
+/* ブロック--------------------- */
+#suuzu_block {
+  position: fixed;
+  text-align: center;
+  z-index: 100;
+}
+
+/* aside_right まわり ---------------------------------------*/
+aside {
+  position: fixed;
+  text-align: center;
+  width: 210px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  font-size: 16px;
+  background-color: aliceblue;
+}
+
+aside .img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 100;
+}
+aside .ichi {
+  width: 10px;
+  margin: 0 10px;
+}
+aside .juu {
+  width: 30px;
+  margin: 0 5px;
+}
+aside .sen,
+aside .gosen,
+aside .ichiman {
+  width: 78px;
+}
+
+#LED {
+  width: 200px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-wrap: break-word;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 900;
+  color: #d8f255;
+  background-color: #333;
+}
+
+#calc_pallet {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 0 auto;
+  border: solid 1px #005aff;
+}
+
+#calc_pallet table {
+  margin-left: auto;
+  margin-right: auto;
+  padding: auto;
+}
+
+#calc_pallet button,
+#calc_pallet .num {
+  width: 36px;
+  height: 36px;
+}
+
+.num,
+.hyaku {
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  text-align: center;
+  vertical-align: middle;
+  color: black;
+  border-radius: 10%;
+  background-color: white;
+  border: 1px solid #333;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.btn {
+  height: 30px;
+  width: 36px;
+  line-height: 24px;
+  margin: auto;
+  padding: 0;
+  cursor: pointer;
+}
+
+.img {
+  cursor: pointer;
+  z-index: 100;
+}
+.m_ichi,
+.ichi {
+  width: 10px;
+  height: 50px;
+  margin: 0 10px;
+}
+.m_juu,
+.juu,
+.m_hyaku {
+  width: 30px;
+  height: 50px;
+  margin: 0 5px;
+}
+.sen,
+.gosen,
+.ichiman {
+  width: 78px;
+  line-height: 40px;
+}
+
+.sm_ichi {
+  width: 5px;
+  height: 20px;
+  margin: 1px;
+}
+.sm_juu,
+.sm_hyaku {
+  width: 10px;
+  margin: 1px;
+  height: 20px;
+  line-height: 20px;
+}
+.m_sen,
+.sm_sen,
+.m_ichiman,
+.sm_ichiman {
+  width: 30px;
+  height: 20px;
+}
+
+/* ----------------------------- */
+footer {
+  position: fixed;
+  display: flex;
+  bottom: 0px;
+  right: 200px;
+  width: calc(100% - 280px);
+  height: 40px;
+  flex-wrap: wrap-reverse;
+  z-index: 1;
+}
+
+#footer_area {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  padding-bottom: 10px;
+}
+
+#gomibako {
+  position: fixed;
+  width: 60px;
+  height: 80px;
+  right: 240px;
+  bottom: 20px;
+  z-index: 1;
+}
+
+/* 九九の表の装飾 */
+.hyou {
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  line-height: 30px;
+  cursor: pointer;
+  border: 2px solid black;
+  background-color: white;
+  font-weight: 600;
+  text-align: center;
+  user-select: none;
+}
+
+.fusi {
+  width: 50px;
+  height: 100px;
+  border: none;
+  background-color: white;
+}
+
+.onpu {
+  width: 50px;
+  height: 100px;
+}
+.o2buo {
+  width: 200px;
+  height: 100px;
+}
+.o4buo,
+.o4kyu {
+  width: 100px;
+  height: 100px;
+}
+.of4bo {
+  width: 150px;
+  height: 100px;
+}
+.o8buo {
+  width: 50px;
+  height: 100px;
+}
+
+/* 数え棒 */
+#pallet {
+  display: flex;
+}
+
+#pallet div {
+  height: 170px;
+  border: #333 1px solid;
+}
+
+#pallet0 {
+  width: 410px;
+  background-color: pink;
+}
+#pallet1 {
+  width: 310px;
+  background-color: lightyellow;
+}
+#pallet2 {
+  width: 210px;
+  background-color: lightblue;
+}
+#box {
+  width: 140px;
+  height: 85px;
+  background-color: lightgreen;
+  border: #333 1px solid;
+}
+
+#box .draggable-elem,
+#pallet .draggable-elem {
+  border: none;
+  background-color: transparent;
+}
+/* たし算の筆算 */
+#field {
+  z-index: 1;
+  user-select: none;
+}
+
+#num_pallet {
+  display: flex;
+  width: 505px;
+  height: 51px;
+  background-color: aliceblue;
+  border: solid 1px #333;
+}
+
+#num_pallet div {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  color:#333;
+  background-color: white;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 10%;
+  border: 1px solid #333;
+}
+
+.keisan_shiki {
+  width: 120px;
+  height: 50px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.naname1 {
+  position: relative;
+}
+.naname1::before {
+  position: absolute;
+  content: "";
+  display: block;
+  transform: rotate(45deg);
+  background-color: red;
+  width: 100%;
+  height: 1px;
+  top: 50%;
+  left: 0;
+}
+
+.seki_kuriagari div,
+.seki_kuriagari td,
+.seki_kuriagari1 div,
+.seki_kuriagari1 td,
+.seki_kuriagari2 div,
+.seki_kuriagari2 td,
+.seki_kuriagari3 div,
+.seki_kuriagari3 td {
+  max-height: 20px;
+  color: red;
+  font-size: 12px;
+  background-color: white;
+  border-radius: 10%;
+  border: 1px solid #333;
+}
+.seki_kuriagari1 div,
+.seki_kuriagari1 td,
+.seki_kuriagari2 div,
+.seki_kuriagari2 td {
+  color: gray;
+}
+.seki_kuriagari1 div,
+.seki_kuriagari2 div,
+.seki_kuriagari3 div,
+.seki_kuriagari div {
+  margin: 0 0 0 auto;
+}
+.seki_kuriagari3 div {
+  margin: auto;
+}
+
+#num_pallet div,
+.seki_tochu div,
+.seki_kotae div {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background-color: white;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 10%;
+  border: 1px solid #333;
+}
+/* 九九のれんしゅうの装飾 */
+#yomi {
+  width: 300px;
+  height: 40px;
+  margin: 10px 0 0 10px;
+  font-size: 16px;
+  text-align: center;
+  align-items: center;
+  z-index: 1000;
+  border-top: 1px solid #4dc4ff;
+  border-left: 1px solid #4dc4ff;
+  letter-spacing: 0.5rem;
+}
+#yomi_kotae {
+  width: 200px;
+  height: 40px;
+  margin: 10px 10px 0 0;
+  font-size: 16px;
+  text-align: center;
+  align-items: center;
+  z-index: 1000;
+  border-top: 1px solid #4dc4ff;
+  border-right: 1px solid #4dc4ff;
+  letter-spacing: 0.2rem;
+}
+#kuku_shiki {
+  width: 300px;
+  height: 60px;
+  margin: 0 0 0 10px;
+  font-size: 60px;
+  line-height: 60px;
+  text-align: center;
+  z-index: 1000;
+  border-bottom: 1px solid #4dc4ff;
+  border-left: 1px solid #4dc4ff;
+  letter-spacing: 0.5rem;
+}
+#kuku_shiki_kotae {
+  width: 200px;
+  height: 60px;
+  margin: 0px 10px 10px 0;
+  font-size: 60px;
+  line-height: 60px;
+  text-align: center;
+  z-index: 1000;
+  border-bottom: 1px solid #4dc4ff;
+  border-right: 1px solid #4dc4ff;
+  letter-spacing: 0.5rem;
+}
+/* 九九のれんしゅうの装飾 */
+
+.YOMI,
+.SHIKI {
+  display: flex;
+}

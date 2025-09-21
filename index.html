@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+  <title>じみパレット - 地味に助かる学習コンテンツ | jimitas.com</title>
+  <meta name="description" content="jimitas.com - 地味に助かる学習コンテンツ。算数、数学、計算練習、九九、時計、筆算など小学生向けの学習教材を提供。インタラクティブな学習ツールで楽しく効率的に勉強できます。" />
+  <meta name="keywords" content="jimitas,じみパレ,学習コンテンツ,算数,数学,小学生,教育,計算練習,九九,時計,筆算,たし算,ひき算,かけ算,学習教材,オンライン学習,教育ツール,インタラクティブ学習" />
+  <meta name="author" content="jimitas.com" />
+  <meta property="og:title" content="じみパレット - 地味に助かる学習コンテンツ" />
+  <meta property="og:description" content="算数の基礎から応用まで、楽しく学べるインタラクティブな学習ツール" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jimitas.com" />
+  <meta property="og:site_name" content="jimitas.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="じみパレット - 地味に助かる学習コンテンツ" />
+  <meta name="twitter:description" content="算数の基礎から応用まで、楽しく学べるインタラクティブな学習ツール" />
+
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" -->
+  <link href="bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <!-- <script type="module" src="index.js"></script> -->
+</head>
+
+<body oncontextmenu="return false;" style="user-select: none">
+  <header>
+    <!-- menu_box -->
+    <select id="menu_box" class="form-select" style="width: 200px" name="menu">
+      <option value="0" selected>さんすうノート</option>
+      <option value="1">すうずぶろっく</option>
+      <option value="2">とけい</option>
+      <option value="3">100までのけいさん</option>
+      <option value="4">大きなかず</option>
+      <option value="5">たし算のひっ算</option>
+      <option value="6">ひき算のひっ算</option>
+      <option value="7">九九のれんしゅう</option>
+      <option value="8">かけ算の筆算(1)</option>
+      <option value="9">かけ算の筆算(2)</option>
+    </select>
+
+    <div id="main_text_box">
+      じみパレ<span style="font-size: 8px">(地味に助かる算数パレット)</span>
+    </div>
+
+    <!-- note_masu -->
+    <label style="width:180px">
+      <img id="note" src="./image/note.png" />
+      <input id="note_range" type="range" class="custom-range" style="width: 100px" value="2" min="0" max="3" style="cursor: pointer" />
+      <input id="masu_check" type="checkbox" class="checkbox" checked/>
+    </label>
+    <!-- grid -->
+    <label style="width:80px">
+      <img id="grid" src="./image/grid.png" />
+      <input type="checkbox" id="grid_check" class="checkbox" checked />
+    </label>
+    <!-- figure -->
+    <select id="figure_box" class="form-select" name="figure">
+      <option value="1" style="color: #333">📐</option>
+      <option value="1" style="color: #333">--</option>
+      <option value="2" style="color: #333">□</option>
+      <option value="3" style="color: #333">△</option>
+      <option value="4" style="color: #333">◣</option>
+      <option value="5" style="color: #333">◢</option>
+      <option value="6" style="color: #333">◀</option>
+      <option value="7" style="color: #333">◁</option>
+      <option value="8" style="color: #333">◇</option>
+      <option value="9" style="color: #333">◆</option>
+      <option value="10" style="color: #333">○</option>
+    </select>
+  </header>
+  <!--  ---------------------------------------------------------------------------->
+  <main id="main">
+    <!-- main article -------------------------------------------->
+    <div id="sub">
+      </select>
+      <div id="buttons">
+      </div>
+      <div id="shiki">
+      </div>
+    </div>
+
+    <article>
+      <canvas id="tegaki_canvas"></canvas>
+      <div id="note_masu"></div>
+      <div id="suuzu_block"></div>
+      <div id="figure_pallet"></div>
+      <div id="content"></div>
+      <div id="kuku_hyou"></div>
+      <div id="hissan_shikata"></div>
+    </article>
+    <!-- ------------------------------------------------------------------ -->
+    <aside id="aside">
+      <div id="icon_area" style="display: flex">
+        <img id="camera_img" class="icon" src="./image/camera.png" />
+        <!-- font_select -->
+        <select id="font_select" class="form-select">
+          <option value="0" style="font-family: 'UD Digi Kyokasho NK-B'; font-weight: bold" checked>
+            あ
+          </option>
+          <option value="1" style="font-family: MS 明朝; font-weight: bold">
+            あ
+          </option>
+          <option value="2" style="font-family: 'メイリオ,ヒラギノ角ゴ'; font-weight: bold">
+            あ
+          </option>
+        </select>
+        <!-- UD -->
+        <input id="UD" type="button" class="btn btn-dark" value="A" />
+      </div>
+      <!-- icon -->
+      <div style="display: flex">
+        <img id="tegaki_img" class="icon" src="./image/tegaki.png" />
+        <select id="color_box" class="form-select" name="color">
+          <option>🌈</option>
+          <option value="0" style="color: black">●</option>
+          <option value="1" style="color: black">○</option>
+          <option value="2" style="color: #ff4b00">●</option>
+          <option value="3" style="color: #fff100">●</option>
+          <option value="4" style="color: #03af7a">●</option>
+          <option value="5" style="color: #005aff">●</option>
+          <option value="6" style="color: #4dc4ff">●</option>
+          <option value="7" style="color: #ff8082">●</option>
+          <option value="8" style="color: #f6aa00">●</option>
+          <option value="9" style="color: #990099">●</option>
+          <option value="10" style="color: #804000">●</option>
+          <option value="11" style="color: #84919e">●</option>
+        </select>
+        <input type="button" class="btn btn-success" id="send" name="send" value="📨" />
+        <input type="button" class="btn btn-danger" id="clear" name="clear" value="×" />
+      </div>
+      <div style="display: flex; justify-content: center">
+        <img id="penki" class="icon" src="./image/penki.png" />
+        <select id="b_color_box" class="form-select" name="b_color">
+          <option value="12" style="color: #333">🎨</option>
+          <option value="13" style="color: #333">□</option>
+          <option value="14" style="color: #ff4b00">■</option>
+          <option value="15" style="color: #ffff80">■</option>
+          <option value="16" style="color: #d8f255">■</option>
+          <option value="17" style="color: #fff100">■</option>
+          <option value="18" style="color: #4dc4ff">■</option>
+          <option value="19" style="color: #ffcabf">■</option>
+          <option value="20" style="color: #ffca80">■</option>
+          <option value="21" style="color: #c9ace6">■</option>
+          <option value="22" style="color: #a06000">■</option>
+          <option value="23" style="color: #c8c8cb">■</option>
+        </select>
+        <input type="button" class="btn btn-secondary" id="undo" name="undo" value="↻" />
+        <input type="button" class="btn btn-primary" id="redo" name="redo" value="↺" />
+      </div>
+      <!-- テキストエリア -->
+      <div id="text_area" style="display: flex">
+        <input id="text_input_box" type="text/plain" />
+        <button id="submit" class="btn btn-success">📨</button>
+      </div>
+      <!-- 計算パレット -->
+      <div id="LED"></div>
+      <div id="calc_pallet"></div>
+      <!-- 画像パレット -->
+      <div id="img_pallet"></div>
+    </aside>
+  </main>
+  <footer id="footer">
+    <div id="footer_area" class="droppable-elem"></div>
+    <img id="gomibako" src="./image/gomibako.png" class="droppable-elem" />
+  </footer>
+
+  <!-- moveableの読み込み -->
+  <script src="moveable.min.js"></script>
+  <!-- <script src="//daybrush.com/moveable/release/latest/dist/moveable.min.js"></script> -->
+  <!-- howler.jsの読み込み -->
+  <script src="./howler.min.js"></script>
+  <!-- html2canvas.jsの読み込み -->
+  <script src="./html2canvas.min.js"></script>
+  <!-- jqueryの読み込み -->
+  <script src="./jquery-3.6.0.min.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+  <script src="main.js"></script>
+</body>
+
+</html>
